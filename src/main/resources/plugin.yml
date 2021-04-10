@@ -1,0 +1,21 @@
+name: coronaroyale
+version: ${project.version}
+main: wampel.cr.Main
+api-version: 1.16
+authors: [ wampelpampel ]
+description: Minecraft Battle-Royale developed by wampelpampel
+commands:
+  start:
+    description: starts battle royale
+
+  startlobby:
+    description: starts the battle royale lobby
+
+  getborderdist:
+    description: Displays border distance in bossbar
+
+  borderdist:
+    description: Gets the distance to border
+
+  kills:
+    description: returns kills of player
