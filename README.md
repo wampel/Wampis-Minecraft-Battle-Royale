@@ -1,4 +1,4 @@
-# Wampi Minecraft Battle Royale 
+# Wampis Minecraft Battle Royale 
  
  - Minecrart battle-royale plugin
  - Spgiot 1.16.5
