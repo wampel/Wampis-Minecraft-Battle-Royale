@@ -13,7 +13,7 @@ public class Kills implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
-        player.sendRawMessage(Main.getPrefix() + ChatColor.GRAY + "Du hast " + player.getStatistic(Statistic.PLAYER_KILLS) + ChatColor.GRAY + " Kills!");
+        player.sendRawMessage(Main.getPrefix() + ChatColor.GRAY + "You have " + player.getStatistic(Statistic.PLAYER_KILLS) + ChatColor.GRAY + " Kills!");
 
         return false;
     }

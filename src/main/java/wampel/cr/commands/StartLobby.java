@@ -16,7 +16,7 @@ public class StartLobby implements CommandExecutor {
         if (player.isOp()) {
             World world = Bukkit.getWorld("world");
             WorldBorder border = world.getWorldBorder();
-            Bukkit.broadcastMessage(Main.getPrefix() + ChatColor.RED + "Lobby gestartet");
+            Bukkit.broadcastMessage(Main.getPrefix() + ChatColor.RED + "Lobby is enabled");
 
             border.setCenter(0, 0);
             border.setSize(20, 0);

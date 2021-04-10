@@ -149,14 +149,14 @@ public class Start implements CommandExecutor {
                 @Override
                 public void run() {
                     for(Player player : Bukkit.getOnlinePlayers()){
-                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Es geht in " + ChatColor.RED + secondsPrep + ChatColor.AQUA + " Sekunden los!"));
+                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Game will start in " + ChatColor.RED + secondsPrep + ChatColor.AQUA + " Seconds!"));
                     }
                     secondsPrep--;
                     if (secondsPrep == 0) {
                         Bukkit.getScheduler().cancelTask(countdown);
                         for(Player player : Bukkit.getOnlinePlayers()) {
                             player.playSound(player.getLocation(), Sound.ENTITY_WITHER_SPAWN, 1, 1);
-                            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.RED + "Es geht los!"));
+                            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.RED + "The game has started!"));
                             player.getInventory().clear();
                         }
                             world.setDifficulty(Difficulty.EASY);
@@ -169,7 +169,7 @@ public class Start implements CommandExecutor {
                                 @Override
                                 public void run() {
                                     for(Player player : Bukkit.getOnlinePlayers()){
-                                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Pvp ist in " + ChatColor.RED + secondsProt + ChatColor.AQUA + " Sekunden an!"));
+                                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Pvp is enabled in " + ChatColor.RED + secondsProt + ChatColor.AQUA + " Seconds!"));
                                     }
                                     secondsProt--;
                                     if (secondsProt == -1) {
@@ -187,7 +187,7 @@ public class Start implements CommandExecutor {
                                             @Override
                                             public void run() {
                                                 for(Player player : Bukkit.getOnlinePlayers()) {
-                                                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Border verkleinert sich in " + ChatColor.RED + secondsFirstBorder + ChatColor.AQUA + " Sekunden!"));
+                                                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Border will shrink in " + ChatColor.RED + secondsFirstBorder + ChatColor.AQUA + " Seconds!"));
                                                 }
                                                 secondsFirstBorder--;
                                                 if (secondsFirstBorder == -1) {
@@ -200,11 +200,11 @@ public class Start implements CommandExecutor {
                                                         public void run() {
                                                             if (secondsSecondBorder < secondsSecondBorderDivTwo) {
                                                                 for (Player player : Bukkit.getOnlinePlayers()) {
-                                                                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Border verkleinert sich in " + ChatColor.RED + secondsSecondBorder + ChatColor.AQUA + " Sekunden!"));
+                                                                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Border will shrink in " + ChatColor.RED + secondsSecondBorder + ChatColor.AQUA + " Seconds!"));
                                                                 }
                                                             } else {
                                                                 for (Player player : Bukkit.getOnlinePlayers()) {
-                                                                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Border verkleinert sich aktuell!"));
+                                                                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.AQUA + "Border is currently shrinking!"));
                                                                 }
                                                             }
                                                             secondsSecondBorder--;
@@ -212,7 +212,7 @@ public class Start implements CommandExecutor {
                                                                 Bukkit.getScheduler().cancelTask(finalborder);
                                                                 border.setSize(confFinalBorderSize, secondsFinalBorder);
                                                                 world.setMonsterSpawnLimit(0);
-                                                                Bukkit.broadcastMessage(Main.getPrefix() + ChatColor.RED + "Es können keine Monster mehr spawnen!");
+                                                                Bukkit.broadcastMessage(Main.getPrefix() + ChatColor.RED + "Mob spawning is disabled!");
                                                             }
                                                         }
                                                     }, 0,20);

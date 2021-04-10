@@ -26,7 +26,7 @@ public class BorderDist implements CommandExecutor {
         Player player = (Player) sender;
         World world = Bukkit.getWorld("world");
         WorldBorder border = world.getWorldBorder();
-        BossBar bossbar = Bukkit.createBossBar("Entfernung zur Border", BarColor.PURPLE, BarStyle.SOLID, BarFlag.CREATE_FOG);
+        BossBar bossbar = Bukkit.createBossBar("Distance to Border", BarColor.PURPLE, BarStyle.SOLID, BarFlag.CREATE_FOG);
         bossbar.addPlayer(player);
         this.task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(Main.class), new Runnable() {
             @Override
@@ -45,13 +45,13 @@ public class BorderDist implements CommandExecutor {
                 double distancetoz2 = bs + zp;
 
                 if (distancetox < distancetoz && distancetox < distancetox2 && distancetox < distancetoz2) { //distance to x
-                    bossbar.setTitle(ChatColor.WHITE + "Entfernung zur Border: " + ChatColor.RED + (int) Math.round(distancetox));
+                    bossbar.setTitle(ChatColor.WHITE + "Distance to Border: " + ChatColor.RED + (int) Math.round(distancetox));
                 } else if (distancetox2 < distancetox && distancetox2 < distancetoz && distancetox2 < distancetoz2){ //distance to x2
-                    bossbar.setTitle(ChatColor.WHITE +"Entfernung zur Border: " + ChatColor.RED +(int) Math.round(distancetox2));
+                    bossbar.setTitle(ChatColor.WHITE +"Distance to Border: " + ChatColor.RED +(int) Math.round(distancetox2));
                 } else if (distancetoz < distancetox && distancetoz < distancetox2 && distancetoz < distancetoz2) { //distance to z
-                    bossbar.setTitle(ChatColor.WHITE +"Entfernung zur Border: " + ChatColor.RED +(int) Math.round(distancetoz));
+                    bossbar.setTitle(ChatColor.WHITE +"Distance to Border: " + ChatColor.RED +(int) Math.round(distancetoz));
                 } else if (distancetoz2 < distancetox && distancetoz2 < distancetox2 && distancetoz2 < distancetoz) { //distance to z2
-                    bossbar.setTitle(ChatColor.WHITE +"Entfernung zur Border: " + ChatColor.RED +(int) Math.round(distancetoz2));
+                    bossbar.setTitle(ChatColor.WHITE +"Distance to Border: " + ChatColor.RED +(int) Math.round(distancetoz2));
                 }
 
                 if (zähler == 0) {
