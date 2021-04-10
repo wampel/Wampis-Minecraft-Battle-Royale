@@ -33,7 +33,7 @@ public class Start implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
+        world.setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, false);
         //Get Config value for prepartion time and set them into the secondsPrep Variable if not there create the config
         if (Config.contains("Set the preparation time in seconds.Preparation time")) {
             secondsPrep = (int) Config.get("Set the preparation time in seconds.Preparation time");
@@ -141,7 +141,6 @@ public class Start implements CommandExecutor {
         } else {
             world.setGameRule(GameRule.NATURAL_REGENERATION, true);
         }
-
         Player player = (Player) sender;
         if (player.isOp()) {
             //Countdown Preptime
